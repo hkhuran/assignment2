@@ -66,6 +66,25 @@
         echo '</thead>';
         echo '<tbody>';
 
+        // for loop to iterate over the database table and fetching the result
+        for ($j = 0; $j < $rows; ++$j) {
+            echo '<tr>';
+            echo '<td>' . $result->fetch_assoc()['firstName'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['lastName'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['address'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['city'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['state'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['zip'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['email'] . '</td>';
+            $result->data_seek($j);
+            echo '<td>' . $result->fetch_assoc()['phone'] . '</td>';
+            echo '</tr>';
         }
         // Closing the table layout.
         echo'</tbody>';
