@@ -67,8 +67,9 @@
         echo '<tbody>';
 
         // for loop to iterate over the database table and fetching the result
-        for ($j = 0; $j < $rows; ++$j) {
+        for ($j = 0, $k = 1; $j < $rows; ++$j, $k + 1) {
             echo '<tr>';
+            echo '<td>' . $k++ . '</td>';
             echo '<td>' . $result->fetch_assoc()['firstName'] . '</td>';
             $result->data_seek($j);
             echo '<td>' . $result->fetch_assoc()['lastName'] . '</td>';
